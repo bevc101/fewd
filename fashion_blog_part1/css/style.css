@@ -17,22 +17,37 @@ Developer @GA in NYC
      box-sizing: border-box; /* IE */
 }
 
+h1,h2,h3,h4,h5,h6,p,a,li,blockquote,img {
+  font-family: lato;
+}
+
 /******************************************
 /* HEADING STYLES
 /*******************************************/
 
+
 h1 {
-  color: #c03e34;
-  font-size: 30px;
+  color: #ff0000;
+  font-size: 48px;
+  font-weight: 100;
+  padding-bottom: 10px;
 }
 
 h2 {
   font-size: 24px;
+  padding-bottom: 10px;
+
 }
 
 h3 {
-  color: #d1d1d1;
+  color: #dddddd;
   font-size: 20px;
+}
+
+.date h3 {
+  color: #d1d1d1;
+  font-size: 30px;
+  font-weight: 200;
 }
 
 /******************************************
@@ -50,11 +65,22 @@ body {
 nav li {
   display: inline-block;
   text-decoration: underline;
-  color: #f9f9f9;
+  color: #e0e0e0;
   font-size: 20px;
-  pading: 10px;
+  padding: 0px 18px 30px 0px;
+
 }
 
+p:first-child::first-letter {
+  float: left;
+  line-height: 40px;
+  font-size: 50px;
+  color: #d1d1d1;
+}
+
+.secondp {
+  positon: relative;
+}
 
 
 
@@ -67,9 +93,20 @@ body {
 	width: 100%;
   height:100%;
 	margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
+#container {
+  width: 800px;
+  margin: 0 auto;
+}
+
+footer a {
+  float: right;
+  font-size: 16px;
+  color: #ff0000;
+  text-decoration: none;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
