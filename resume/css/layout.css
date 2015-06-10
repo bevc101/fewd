@@ -1,0 +1,55 @@
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+
+
+header {
+  font-size: 1.8em;
+  color: #ececea;
+}
+
+header li {
+  display: inline-block;
+  padding-right: 30px;
+}
+
+#contact_info {
+  float: left;
+}
+
+img {
+  float: right;
+  height: 200px;
+  width: 260px;
+}
+
+body {
+  background: #74afad;
+  color: #2b2b2b;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+body h2 {
+  clear: both;
+  border-bottom: 5px solid #d9853b;
+  border-top: 5px solid #d9853b;
+}
+
+.work h4 {
+  font-style: italic;
+}
+
+footer {
+  position: relative;
+  padding-top: 40px;
+  border-top: 5px solid #d9853b;
+  font-style: italic;
+}
