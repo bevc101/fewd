@@ -107,6 +107,7 @@ section.ad {
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #ddd;
 }
+
 section.ad p {
   margin: 30px 0;
   background-color: #ccc;
@@ -133,16 +134,18 @@ ul li span {
 
 footer {
   position: relative;
-  padding-top: 20px 0;
+  padding-top: 16px 0;
   clear: both;
 }
 
 footer li {
   display: inline-block;
   border-right: 1px solid #bbb;
-  padding: 1px;
+  border-spacing: 2px;
+  padding-right: 2px;
 }
 
 footer p {
   color: #bebebe;
+  padding-top: 8px;
 }
