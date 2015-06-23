@@ -1,0 +1,35 @@
+
+.nav  {
+  position: fixed;
+  display: block;
+  z-index: 0;
+  list-style: none;
+  background: #545454;
+  float: left;
+  width: 20%;
+  height: 100%;
+}
+
+
+.nav li {
+  color: #d3d3d3;
+
+}
+
+.nav a {
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.hamburger {
+  background: url('../../img/hamburger.svg');
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  left: 10px;
+  top: 10px;
+  z-index: 2;
+  cursor: pointer;
+}
