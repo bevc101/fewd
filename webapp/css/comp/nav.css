@@ -1,22 +1,21 @@
 
-.nav  {
-  position: fixed;
-  display: block;
+nav  {
+  position: absolute;
+  left: 0;
   z-index: 0;
   list-style: none;
   background: #545454;
-  float: left;
-  width: 20%;
+  width: 320px;
   height: 100%;
 }
 
 
-.nav li {
+nav li {
   color: #d3d3d3;
 
 }
 
-.nav a {
+nav a {
   text-decoration: none;
   display: block;
   padding: 10px 20px;
@@ -25,9 +24,11 @@
 
 .hamburger {
   background: url('../../img/hamburger.svg');
+  background-size: 32px 32px;
+  background-position: 4px 4px;
   position: absolute;
-  height: 40px;
-  width: 40px;
+  height: 44px;
+  width: 44px;
   left: 10px;
   top: 10px;
   z-index: 2;

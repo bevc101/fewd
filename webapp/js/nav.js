@@ -6,19 +6,22 @@ Element.prototype.Nav = function(){
       width = window.innerWidth,
       navIcon = document.createElement('div');
 
-  this.createButtons = function(){
+  this.toggleNav = function(){
+    if(position === 0) {
+      position = (width * 0.2);
+      container.style.marginLeft = position +'px';
+    }else{
+      position = 0;
+      container.style.marginLeft = position;
+    }
+  };
+
+  this.createButton = function(){
 
     navIcon.classList.add('hamburger');
     container.insertBefore(navIcon,document.getElementById('slider'));
 
-    navIcon.addEventListener('click', function(){
-      if(position === 0) {
-        position = (width * 0.2);
-        container.style.marginLeft = position +'px';
-      }else{
-        position = 0;
-        container.style.marginLeft = position;
-      }
+    navIcon.addEventListener('click', nav.toggleNav);
 
     });
 
@@ -26,7 +29,7 @@ Element.prototype.Nav = function(){
 
 
   this.init = function(){
-    nav.createButtons();
+    nav.createButton();
   };
 
   this.init();
