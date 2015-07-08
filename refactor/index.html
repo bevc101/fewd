@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="A simple example of how Javascript can manipulate DOM.">
+    	<meta name="keywords" content="General Assembly, Javascript, JS">
+
+		<title>Slider + Nav + Gallery + Contact</title>
+
+		<!-- external CSS link -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/slider.js"></script>
+		<script src="js/nav.js"></script>
+		<script src="js/gallery.js"></script>
+		<script src="js/search.js"></script>
+		<script src="js/contact.js"></script>
+	</head>
+	<body>
+
+		<nav id="nav">
+			<ul>
+				<li data-section="slider" class="nav-item">Home</li>
+				<li data-section="gallery" class="nav-item">Gallery</li>
+				<li data-section="contact" class="nav-item">Contact</li>
+			</ul>
+		</nav>
+
+		<div id="container">
+
+			<div id="search">
+					<input placeholder="Search" type="search">
+			</div>
+
+			<section id="slider" class="slider" data-index="0">
+					<ul>
+						<li><img src="img/photos/california.jpg"></li>
+						<li><img src="img/photos/marina-del-rey.jpg"></li>
+						<li><img src="img/photos/venice.jpg"></li>
+					</ul>
+			</section>
+
+			<section id="gallery" class="gallery" data-index="1">
+				<ul>
+				</ul>
+			</section>
+
+			<section id="single-photo" class="single-photo" data-index="2">
+
+			</section>
+
+			<section id="contact" class="contact" data-index="3">
+				<div class="bg">
+					<div class="wrapper" id="form-wrapper">
+						<h1>Contact</h1>
+						<form id="c_form" name="c_form">
+							<input id="name" name="name" placeholder="Please enter your name" type="text" tabindex="1" >
+							<input id="email" name="email" placeholder="Please enter your email address" type="email" tabindex="2" >
+							<input id="tele" name="phone" placeholder="Please enter your telephone number" type="tel" tabindex="3" >
+							<input id="site" name="url" placeholder="Please enter your website address" type="url" tabindex="4" >
+							<textarea id="desc" name="description" placeholder="Please enter your message" type="text" tabindex="5"></textarea>
+							<button id="contact-submit" name="submit" type="submit"  tabindex="5">Send Email</button>
+						</form>
+					</div>
+				</div>
+			</section>
+
+		</div><!-- #container -->
+
+		<script src="js/app.js"></script>
+	</body>
+</html>
