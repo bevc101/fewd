@@ -1,0 +1,32 @@
+/******************************************
+/* SETUP
+/*******************************************/
+/* Box Model Hack */
+
+* {
+  -moz-box-sizing: border-box;
+  /* Firexfox */
+
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome/iOS/Android */
+
+  box-sizing: border-box;
+  /* IE */
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  background: #224f02;
+}
+
+h1 {
+  color: #FFFFFF;
+  display: block;
+  text-align: center;
+  font-family: serif;
+  font-weight: 100;
+  font-size: 50px;
+  padding: 40px 0px;
+}

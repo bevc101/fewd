@@ -1,0 +1,64 @@
+.cards {
+  margin: 20px;
+  float: left;
+  width: 110px;
+  height: 160px;
+  margin: 12px;
+}
+.back {
+  position: absolute;
+  background: url('../img/bicycle-back.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 110px;
+  height: 160px;
+  margin: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 3
+  }
+.front {
+  position: absolute;
+  width: 110px;
+  height: 160px;
+  margin: 12px;
+  background-color: #ffffff;
+  border-radius:5px;
+  z-index: 0;
+  -webkit-transform:rotate(-360deg);
+}
+.spades {
+  position: absolute;
+  background: url('../img/french-suits.svg') no-repeat -5px -4px;
+  width: 69px;
+	height: 91px;
+  margin: 33px 0px 0px 20px;
+  z-index: 2;
+}
+.hearts {
+  position:absolute;
+  background: url('../img/french-suits.svg') no-repeat -112px -5px;
+	width: 78px;
+	height: 89px;
+  margin: 33px 0px 0px 20px;
+  z-index: 2;
+}
+.clubs{
+  position: absolute;
+  background: url('../img/french-suits.svg') no-repeat no-repeat -107px -108px;
+	width: 88px;
+	height: 87px;
+  margin: 33px 0px 0px 20px;
+  z-index: 2;
+}
+.diamonds{
+  position: absolute;
+  background: url('../img/french-suits.svg') no-repeat no-repeat -7px -107px;
+	width: 65px;
+	height: 89px;
+  margin: 33px 0px 0px 20px;
+  z-index: 2;
+}
+li {
+  list-style-type:none;
+}
