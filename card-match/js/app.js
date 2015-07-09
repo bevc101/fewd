@@ -2,7 +2,6 @@ var Card = function(elem,parent,className) {
   var self = this;
   this.element = document.createElement(elem);
   this.element.classList.add(className);
-  console.log('yo');
   this.element.addEventListener('mousedown',self.flipCard);
   parent.appendChild(self.element);
 };
@@ -13,9 +12,9 @@ Card.prototype = {
   },
   flipCard : function(ev){
     console.log(ev);
-    this.style.opacity = 0.0;
-    this.style.zIndex = 0;
-    this.style.display = 'none';
+    // this.style.opacity = 0.0;
+    // this.style.zIndex = 0;
+    // this.style.display = 'none';
   }
 };
 
@@ -57,7 +56,7 @@ Controller.prototype = {
         model.cards.forEach(function(card){
 
            var c;
-           c = new Card('div',document.body,'cards');
+           c = new Card('div',document.getElementById('container'),'cards');
            c.setContent('<div class="back"></div><div class="front"><div class="'+card.suit+'"</div></div>');
            self.model.push(c);
 
