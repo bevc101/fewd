@@ -4,14 +4,13 @@
   float: left;
   width: 110px;
   height: 160px;
-  margin: 12px;
+  margin: 10px;
   transform-style: preserve-3d;
   transition: transform 1s;
 }
 .flipped {
-  transform: rotateX(180deg );
+  transform: rotateX(180deg);
 }
-
 .back {
   position: absolute;
   background: url('../img/bicycle-back.jpg');
@@ -22,7 +21,8 @@
   margin: 12px;
   border-radius: 8px;
   cursor: pointer;
-  z-index: 3
+  z-index: 3;
+  backface-visibility: hidden;
   }
 .front {
   position: absolute;
@@ -32,6 +32,7 @@
   background-color: #ffffff;
   border-radius:8px;
   z-index: 0;
+  transform: rotateX(180deg);
 }
 .spades {
   position: absolute;

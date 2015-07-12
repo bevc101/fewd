@@ -11,12 +11,10 @@ Card.prototype = {
     this.element.innerHTML = content;
   },
   flipCard : function(ev){
-     var self = this;
-     console.log(ev);
     // var x = ev.target.
-     setTimeout(function(){
-      ev.target.classList.add('flipped');
-    },1);
+    var x = ev.target.parentNode.classList;
+    console.log(x);
+    x.toggle('flipped');
   }
 };
 
