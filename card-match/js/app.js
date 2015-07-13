@@ -11,10 +11,19 @@ Card.prototype = {
     this.element.innerHTML = content;
   },
   flipCard : function(ev){
-    // var x = ev.target.
     var x = ev.target.parentNode.classList;
     console.log(x);
-    x.toggle('flipped');
+    x.add('flipped');
+    y = setTimeout(function(){x.toggle('flipped')},3000);
+    z = document.getElementsByClassName('flipped');
+    if (z.length === 2) {
+      firstc = z[0].innerHTML;
+      secondc = z[1].innerHTML;
+      if (firstc === secondc) {
+        console.log('matcht')
+        clearTimeout(y);
+      }
+    }
   }
 };
 
@@ -24,25 +33,6 @@ var Controller = function(){
 
 
 Controller.prototype = {
-  // flipCard : function(){
-  //   console.log('yo');
-  //   var cardback = document.getElementsByClassName('back');
-  //   cardback.addEventListener('mousedown',function(){
-  //     cardback.style.opacity = 0.0;
-  //     cardback.style.zIndex = 0;
-  //     cardback.style.display = 'none';
-  //   });
-  // },
-  // createView : function(){
-  //   var self = this;
-  //   for(x=0;x<maxset;x++){
-  //     this.model.forEach(function(card){
-  //       var view = new View('div',document.body,'cards');
-  //       view.setContent('<div class="back"></div><div class="front"><div class="'+card.model.suit+'"</div></div>');
-  //     //  self.flipCard();
-  //     });
-  //   }
-  // },
   fetchCards : function(){
     var self = this;
     var xhr = new XMLHttpRequest();
@@ -53,16 +43,19 @@ Controller.prototype = {
         //parse our json
       //  console.log(xhr.responseText);
         var model = JSON.parse(xhr.responseText);
+        function Shuffle(o) {
+	        for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	        return o;
+        };
+        card = Shuffle(model.cards);
         model.cards.forEach(function(card){
-
            var c;
            c = new Card('div',document.getElementById('container'),'cards');
-           c.setContent('<div class="back"></div><div class="front"><div class="'+card.suit+'"</div></div>');
+           c.setContent('<div class="back"></div><div class="front"><div class='
+           + card.suit + '>');
            self.model.push(c);
 
         });
-        //self.createView();
-
       }
     };
     xhr.send();
