@@ -1,9 +1,13 @@
-var Card = function(elem,parent,className) {
+  var click = 0;
+
+var Card = function(suitName) {
   var self = this;
-  this.element = document.createElement(elem);
-  this.element.classList.add(className);
+  this.element = document.createElement('div');
+  this.element.innerHTML = '<div class="back"></div><div class="front"><div class='
+  + suitName + '>';
+  this.element.classList.add('cards');
   this.element.addEventListener('mousedown',self.flipCard);
-  parent.appendChild(self.element);
+  document.getElementById('container').appendChild(self.element);
 };
 
 Card.prototype = {
@@ -11,20 +15,33 @@ Card.prototype = {
     this.element.innerHTML = content;
   },
   flipCard : function(ev){
-    var x = ev.target.parentNode.classList;
+    timeouts = [];
+    click = click+1;
+    x = ev.target.parentNode.classList;
+    x.add('flipped');
+    timeouts.push(setTimeout(function(){x.toggle('flipped')}, 3000));
+    }
+
+
+
+
+  /*  var x = ev.target.parentNode.classList;
     console.log(x);
     x.add('flipped');
-    y = setTimeout(function(){x.toggle('flipped')},3000);
+    timeouts.push(setTimeout(function(){x.toggle('flipped')}, 3000));
     z = document.getElementsByClassName('flipped');
     if (z.length === 2) {
       firstc = z[0].innerHTML;
       secondc = z[1].innerHTML;
       if (firstc === secondc) {
-        console.log('matcht')
-        clearTimeout(y);
-      }
-    }
-  }
+        console.log('match')
+        for (var i = 0; i < timeouts.length; i++) {
+        clearTimeout(timeouts[i]);
+        timeouts = [];
+        }
+     }
+   } */
+
 };
 
 var Controller = function(){
@@ -50,9 +67,7 @@ Controller.prototype = {
         card = Shuffle(model.cards);
         model.cards.forEach(function(card){
            var c;
-           c = new Card('div',document.getElementById('container'),'cards');
-           c.setContent('<div class="back"></div><div class="front"><div class='
-           + card.suit + '>');
+           c = new Card(card.suit);
            self.model.push(c);
 
         });
