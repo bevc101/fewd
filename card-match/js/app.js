@@ -1,4 +1,5 @@
   var click = 0;
+  
 
 var Card = function(suitName) {
   var self = this;
