@@ -41,6 +41,7 @@ module.exports = function(app,passport) {
   app.use('/', express.static(process.cwd() + '/client'));
   app.use('/docs', express.static(process.cwd() + '/docs'));
   app.use('/404', express.static(process.cwd() + '/404'));
+  app.use('/img', express.static(process.cwd() + '/img'));
 
   app.use('/api', router);
   app.use('/api/login', require('./app/routes/login'));
@@ -50,11 +51,11 @@ module.exports = function(app,passport) {
   app.use('/api/user', require('./app/routes/user'));
 
 
-  app.get('*', function(req, res, next) {
-    var err = new Error();
-    err.status = 404;
-    next(err);
-  });
+  // app.get('*', function(req, res, next) {
+  //   var err = new Error();
+  //   err.status = 404;
+  //   next(err);
+  // });
 
   // handling 404 errors
 /*  app.use(function(err, req, res, next) {

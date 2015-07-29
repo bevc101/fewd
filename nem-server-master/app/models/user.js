@@ -25,10 +25,12 @@ var UserSchema = new Schema({
     firstName: String,
     lastName: String,
     username: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    bar: { type: String, required: true },
-    drink: { type: String, required: true },
-    time: { type: String, required: true },
+    bar: String,
+    drink: String,
+    age: { type: String, required: true },
+    location: { type: String, required: true },
     resetPasswordToken: String,
     resetPasswordExpires: Date,
     lastUpdated : Date,
@@ -63,6 +65,7 @@ UserSchema.pre('save', function(next) {
     if (err) return next(err);
 
     bcrypt.hash(user.password, salt, null, function(err, hash) {
+      console.log(hash);
       if (err) return next(err);
       user.password = hash;
       next();

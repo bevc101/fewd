@@ -62,7 +62,7 @@ UserController.prototype.createUser = function(req, res, next){
   user.customer = {};
 
   if(req.body.avatar){
-    user.avatar.image = '/img/user/avatar/user-avatar-'+user.username+'-'+id+'.jpg';
+    user.avatar.image = 'img/user/avatar/user-avatar-'+user.username+'-'+id+'.jpg';
   }
 
   User.findOne({username: user.username}, function (err, results) {
@@ -219,10 +219,10 @@ UserController.prototype.updateUserAvatar = function(req,res){
     var id = uuid.v4();
     var buffer = decodeBase64Image(res.body.image);
 
-    user.avatar.image = '/img/user/avatar/user-avatar-'+user.username+'-'+id+'.jpg';
+    user.avatar.image = 'img/user/avatar/user-avatar-'+user.username+'-'+id+'.jpg';
     user.lastUpdated = new Date();
 
-    // save the user
+    //save the user
     user.save(function(err) {
       if (err) {
         return next(err);
