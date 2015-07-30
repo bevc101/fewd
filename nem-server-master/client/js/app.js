@@ -43,6 +43,10 @@ var getUsers = function(){
           var h3 = document.createElement('h3');
           h3.innerHTML = card.firstName+' '+card.lastName;
           div.appendChild(h3);
+          var h4 = document.createElement('h4');
+          h4.innerHTML = '<p>Favorite bar:'+card.bar+'<br>'+
+                         'Age:'+card.age+'</p>';
+          div.appendChild(h4);
           container.appendChild(div);
       });
     });
@@ -152,9 +156,13 @@ var login = function(){
       }
 
       xhr.request('login','POST',user).then(function(res){
-        console.log(res);
         if(res.responseText==''){
-          //
+          error = document.getElementById('error')
+          error.innerHTML='<h1>Incorrect Username or Password</h1><a id="close">[close]</a>';
+          close = document.getElementById("close");
+          close.addEventListener('click', function() {
+            error.style.display = 'none';
+           }, false);
         }
         else if( typeof(res) === 'object' && res.username === user.username ){
               showHome();

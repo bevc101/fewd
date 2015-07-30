@@ -28,7 +28,7 @@ body {
   font-size: 16px;
   line-height: 1.2em;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  background: #EFEFEF;
+  background: #FFD700;
 }
 
 /******************************************
@@ -176,7 +176,7 @@ input.upload {
 
 .card{
     position:relative;
-    width:22.25%;
+    width:22.22%;
     margin-left: 2.2%;
     margin-right: 2.2%;
     margin-top: 40px;
@@ -186,7 +186,6 @@ input.upload {
     text-align:center;
     border-radius: 10px;
 }
-
 .card .photo{
     position:relative;
     width:120px;
@@ -199,4 +198,30 @@ input.upload {
 .card h3{
     padding-top:6px;
     padding-bottom:40px;
+}
+
+#error {
+    position: absolute;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fde073;
+    text-align: center;
+    line-height: 2.5;
+    overflow: hidden;
+    -webkit-box-shadow: 0 0 5px black;
+    -moz-box-shadow:    0 0 5px black;
+    box-shadow:         0 0 5px black;
+}
+
+.cssanimations.csstransforms #error {
+    -webkit-transform: translateY(-50px);
+    -webkit-animation: slideDown 2.5s 1.0s 1 ease forwards;
+    -moz-transform:    translateY(-50px);
+    -moz-animation:    slideDown 2.5s 1.0s 1 ease forwards;
+}
+
+.cssanimations.csstransforms #close {
+  display: none;
 }
