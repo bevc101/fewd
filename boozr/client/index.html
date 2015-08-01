@@ -31,19 +31,23 @@
 				<h5 id="signup-btn"><a href="#" id="lf-link">Not a member? Really?</a></h5>
 			</div>
 
-			<div class="mdl-card mdl-shadow--2dp demo-card-wide" id="signup-form">
+			<div class="mdl-card mdl-shadow--2dp demo-card-wide" id="signup-form" style="display:none">
 					<input type="file" id="sf-image-loader" name="sf-image-loader"/>
 				<form data-init-psswrd>
 					<canvas id="sf-image-canvas"></canvas>
-					<label><input type="text" placeholder="email address" id="sf-email"></label>
-					<label><input type="text" placeholder="username" id="sf-username"></label>
-					<label><input type="password" placeholder="password" id="sf-password" data-psswrd-toggle></label>
-					<label><input type="text" placeholder="first name" id="sf-fname"></label>
-					<label><input type="text" placeholder="last name" id="sf-lname"></label>
-					<label><input type="text" placeholder="age" id="sf-age"></label>
-					<label><input type="text" placeholder="location" id="sf-location"></label>
-					<label><input type="text" placeholder="favorite bar" id="sf-bar"></label>
-					<label><input type="text" placeholder="favorite cocktail" id="sf-drink"></label>
+					<div id="login-info">
+					  <label><input type="text" placeholder="username" id="sf-username"></label>
+					  <label><input type="password" placeholder="password" id="sf-password" data-psswrd-toggle></label>
+						<label><input type="text" placeholder="email address" id="sf-email"></label>
+					</div>
+					<div id="text-info">
+				  	<label><input type="text" placeholder="first name" id="sf-fname"></label>
+				  	<label><input type="text" placeholder="last name" id="sf-lname"></label>
+					  <label><input type="text" placeholder="age" id="sf-age"></label>
+					  <label><input type="text" placeholder="location" id="sf-location"></label>
+					  <label><input type="text" placeholder="favorite bar" id="sf-bar"></label>
+					  <label><input type="text" placeholder="favorite cocktail" id="sf-drink"></label>
+					</div>
 
 					<div class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="sf-submit">create user</div>
 				</form>
