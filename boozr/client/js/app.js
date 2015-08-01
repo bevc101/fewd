@@ -17,6 +17,7 @@ var showHome = function(){
   document.body.classList.toggle('welcome-page');
   document.getElementById('bg').style.display='none';
   getUsers();
+  getSearch();
 };
 
 
@@ -28,6 +29,12 @@ var showSignup = function(){
   if(document.body.classList.contains('welcome-page')){
     document.body.classList.remove('welcome-page');
   }
+  var canvas = document.getElementById("sf-image-canvas");
+  var context = canvas.getContext("2d");
+  context.font = "20px Roboto Font";
+  context.textAlign = "center";
+  context.fillStyle = "#d7d7d7";
+  context.fillText("Upload Pic",  canvas.width/2, canvas.height/2);
 };
 
 var getUsers = function(){
@@ -46,6 +53,7 @@ var getUsers = function(){
           div.appendChild(h3);
           var h4 = document.createElement('h4');
           h4.innerHTML = '<p>Favorite bar: '+card.bar+'<br>'+
+                         'Favorite Drink: '+card.drink+'<br>'+
                          'Age: '+card.age+'<br>'+
                          'Location: '+card.location+'<br>'+
                          '</p>';
@@ -54,6 +62,19 @@ var getUsers = function(){
       });
     });
 };
+
+var getSearch = function(){
+ searchButton = document.getElementById('searchfield');
+ searchButton.addEventListener("keydown",function(ev){
+
+    if(ev.keyCode === 13){
+      word = document.getElementById('search').value;
+      console.log(word);
+    }
+
+ });
+};
+
 
 var signup = function(){
 

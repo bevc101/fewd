@@ -17,6 +17,18 @@
 <!--		<script src="js/lib/psswrd.js"></script>-->
 		<script src="js/xhr.js"></script>
 	</head>
+	<header>
+		<div class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="logout" style="display:none">logout</div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable" id="searchfield" style="display:none">
+			<label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+				<i class="material-icons">search</i>
+		 </label>
+		 <div class="mdl-textfield__expandable-holder">
+			 <input class="mdl-textfield__input" type="text" id="search" />
+			 <label class="mdl-textfield__label" for="search">Enter your query...</label>
+		 </div>
+	 </div>
+ </header>
 	<body>
 		<div id="bg"></div>
 		<div id="container">
@@ -32,9 +44,14 @@
 			</div>
 
 			<div class="mdl-card mdl-shadow--2dp demo-card-wide" id="signup-form" style="display:none">
-					<input type="file" id="sf-image-loader" name="sf-image-loader"/>
+				<div class="image-upload">
+      	 <label for="sf-image-loader" id="upload-pic">
+				   <canvas id="sf-image-canvas"></canvas>
+    	   </label>
+				<input type="file" id="sf-image-loader" name="sf-image-loader"/>
+			</div>
 				<form data-init-psswrd>
-					<canvas id="sf-image-canvas"></canvas>
+
 					<div id="login-info">
 					  <label><input type="text" placeholder="username" id="sf-username"></label>
 					  <label><input type="password" placeholder="password" id="sf-password" data-psswrd-toggle></label>
@@ -55,23 +72,12 @@
 			</div>
 
 			<div id="welcome">
-			  <div class="message">
+			  <div class="message" style="display:none">
 				  <h1>Boozr</h1>
 			  </div>
 		  </div>
 
-			<div class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="logout">logout</div>
-			<div id="searchfield" style="display:none">
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-		    <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-			    <i class="material-icons">search</i>
-		   </label>
-		   <div class="mdl-textfield__expandable-holder">
-			   <input class="mdl-textfield__input" type="text" id="search" />
-			   <label class="mdl-textfield__label" for="search">Enter your query...</label>
-		 </div>
-	 </div>
-		  </div>
+
 
 		 </div>
 
