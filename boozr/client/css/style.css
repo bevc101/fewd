@@ -60,49 +60,79 @@ a:link,a:visited{
   color:##0000CD;
 }
 a:hover,a:active{
-  color:#8A2BE2;
+  color:#ffab40;
 }
 
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+img {
+  width:240px;
+  height:240px;
+}
 
 #sf-image-canvas{
+  color: #f44336;
+}
+
+#sf-image-canvas{
+    border: 1px solid #a1a3a3;
     border-radius: 120px;
     background-color:#FFFFFF;
     width:240px;
     height:240px;
-    margin-left: 40px;
+    margin-left: 90px;
     margin-top: 20px;
+    background-position: center center;
+    background-size: cover;
 }
 
-.form{
-  position:relative;
-  width: 320px;
-  height: auto;
-  background: #DCDCDC;
-  top:10%;
-  left:50%;
-  margin-left:-180px;
-  clear:both;
-  padding-bottom: 4px;
-  margin-top: 60px;
+#login-form {
+  border-radius: 6px;
+  height: 300px;
+  margin: 20px auto 0;
+  width: 300px;
 }
 
-.form input{
-  width:300px;
+#login-form h3 {
+  text-align: center;
+}
+
+#login-form input{
+  border: 1px solid #a1a3a3;
+  width:200px;
   height:48px;
-  border: 0 none;
   padding: 10px;
   margin: 10px;
   font-size: 18px;
 }
 
+#signup-form {
+  border-radius: 6px;
+  height: 800px;
+  margin: 20px auto 0;
+  width: 500px;
+  padding: 25px;
+}
+
+#signup-form input{
+  border: 1px solid #a1a3a3;
+  width:200px;
+  height:48px;
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+}
+
+#sf-link {
+  padding: 10px;
+}
+
+
 input.upload {
     font-size: 1em;
     line-height: 0em;
-    padding-left:0px;
 }
 
 .form input:focus,.form input:active{
@@ -110,6 +140,10 @@ input.upload {
 }
 
 #lf-submit {
+  background-color: #f44336;
+}
+
+#sf-submit {
   background-color: #f44336;
 }
 
@@ -136,6 +170,7 @@ input.upload {
 
 #signup-btn{
   color: #f44336;
+  padding-left: 10px;
 }
 
 
@@ -156,30 +191,9 @@ input.upload {
   text-align:center;
 }
 
-.card{
-    position:relative;
-    width:22.22%;
-    margin-left: 2.2%;
-    margin-right: 2.2%;
-    margin-top: 40px;
-    height:auto;
-    float:left;
-    background:#FFFFFF;
-    text-align:center;
-    border-radius: 10px;
-}
-.card .photo{
-    position:relative;
-    width:120px;
-    height:120px;
-    border-radius: 60px;
-    margin: 0 auto;
-    margin-top:40px;
-}
-
-.card h3{
-    padding-top:6px;
-    padding-bottom:40px;
+.card {
+  margin: 20px;
+  padding: 30px;
 }
 
 #error {

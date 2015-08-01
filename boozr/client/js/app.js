@@ -36,7 +36,7 @@ var getUsers = function(){
       console.log(res);
       res.forEach(function(card){
           var div = document.createElement('div');
-          div.classList.add('mdl-card', 'mdl-shadow--2dp', 'demo-card-wid');
+          div.classList.add('card', 'mdl-card', 'mdl-shadow--2dp', 'demo-card-wid');
           var img = new Image();
           img.src = 'http://localhost:4444/'+card.avatar.image;
           img.classList.add('photo');
@@ -45,8 +45,10 @@ var getUsers = function(){
           h3.innerHTML = card.firstName+' '+card.lastName;
           div.appendChild(h3);
           var h4 = document.createElement('h4');
-          h4.innerHTML = '<p>Favorite bar:'+card.bar+'<br>'+
-                         'Age:'+card.age+'</p>';
+          h4.innerHTML = '<p>Favorite bar: '+card.bar+'<br>'+
+                         'Age: '+card.age+'<br>'+
+                         'Location: '+card.location+'<br>'+
+                         '</p>';
           div.appendChild(h4);
           container.appendChild(div);
       });
