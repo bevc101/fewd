@@ -17,7 +17,6 @@ var showHome = function(){
   document.body.classList.toggle('welcome-page');
   document.getElementById('bg').style.display='none';
   getUsers();
-  getSearch();
 };
 
 
@@ -59,21 +58,33 @@ var getUsers = function(){
                          '</p>';
           div.appendChild(h4);
           container.appendChild(div);
-      });
+          searchButton = document.getElementById('searchfield');
+          searchButton.addEventListener("keydown",function(ev){
+
+             if(ev.keyCode === 13){
+               query = document.getElementById('search').value.toLowerCase();
+               arr = res;
+               console.log(arr.length);
+               arr.forEach(function(k,v){
+                for (var key in obj) {
+                   if (obj.hasOwnProperty(key)) {
+                     var val = obj[key].toString();
+                       if (!val.toLowerCase().includes(query)){
+                         console.log('delete');
+                      } else {
+                         console.log('keep');
+                      }
+
+                     }
+                 }*/
+              });
+            }
+       });
     });
+  });
 };
 
-var getSearch = function(){
- searchButton = document.getElementById('searchfield');
- searchButton.addEventListener("keydown",function(ev){
 
-    if(ev.keyCode === 13){
-      word = document.getElementById('search').value;
-      console.log(word);
-    }
-
- });
-};
 
 
 var signup = function(){
