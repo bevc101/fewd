@@ -173,6 +173,10 @@ input.upload {
   margin-left: 10px;
 }
 
+#message-btn {
+  background-color: #f44336;
+}
+
 #logout {
   background-color: #f44336;
   position: fixed;

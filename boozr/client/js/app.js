@@ -42,6 +42,7 @@ var getUsers = function(){
       console.log(res);
       res.forEach(function(card){
           var div = document.createElement('div');
+          div.id = card.username;
           div.classList.add('card', 'mdl-card', 'mdl-shadow--2dp', 'demo-card-wid');
           var img = new Image();
           img.src = 'http://localhost:4444/'+card.avatar.image;
@@ -57,33 +58,52 @@ var getUsers = function(){
                          'Location: '+card.location+'<br>'+
                          '</p>';
           div.appendChild(h4);
+          var button = document.createElement('message-btn');
+          button.classList.add('mdl-button', 'mdl-js-button', 'mdl-button--raised', 'mdl-js-ripple-effect', 'mdl-button--accent');
+          button.id = 'message-btn'
+          button.innerHTML = 'message';
+          div.appendChild(button);
           container.appendChild(div);
-          searchButton = document.getElementById('searchfield');
-          searchButton.addEventListener("keydown",function(ev){
+        });
+        searchButton = document.getElementById('searchfield');
+        searchButton.addEventListener("keydown",function(ev){
 
-             if(ev.keyCode === 13){
-               query = document.getElementById('search').value.toLowerCase();
-               arr = res;
-               console.log(arr.length);
-               arr.forEach(function(k,v){
-                for (var key in obj) {
-                   if (obj.hasOwnProperty(key)) {
+            if(ev.keyCode === 13){
+              query = document.getElementById('search').value.toLowerCase();
+              console.log(query);
+              arr = res;
+
+              for (var i=0; i < arr.length; i++) {
+                obj = arr[i];
+                   var match = false;
+                   for (var key in obj) {
+
+                    if (obj.hasOwnProperty(key)) {
                      var val = obj[key].toString();
-                       if (!val.toLowerCase().includes(query)){
-                         console.log('delete');
-                      } else {
-                         console.log('keep');
+                       console.log(val);
+                       if (val.toLowerCase().includes(query)){
+                         document.getElementById(obj.username).style.display = "block";
+                         match = true;
+                       } else{
+                         if(match===false){
+                              document.getElementById(obj.username).style.display = "none";
+                         }
+                       }
+
+                  /*if (object.hasOwnProperty(key)) {
+                    var val = object[key].toString();
+                      if (!val.toLowerCase().includes(query)){
+                        arr.splice(i, 1)
                       }
-
-                     }
-                 }*/
-              });
-            }
-       });
+                  } */
+               };
+             };
+          };
+           console.log(arr);
+        };
     });
-  });
-};
-
+ });
+ };
 
 
 
